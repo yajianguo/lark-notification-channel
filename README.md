@@ -67,6 +67,7 @@ public function routeNotificationForLark()
 
 ### Available methods
 
+- `url('')`: Accepts a string value for the Lark url.
 - `data('')`: Accepts a JSON-encodable value for the Lark body.
 - `query('')`: Accepts an associative array of query string values to add to the request.
 - `userAgent('')`: Accepts a string value for the Lark user agent.
