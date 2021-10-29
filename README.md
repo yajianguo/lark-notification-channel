@@ -76,12 +76,6 @@ public function routeNotificationForLark()
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-## Testing
-
-``` bash
-$ composer test
-```
-
 ## Security
 
 If you discover any security related issues, please email a@a.com instead of using the issue tracker.
