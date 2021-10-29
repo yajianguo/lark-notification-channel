@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications;
+namespace NotificationChannels\Lark;
 
 use Illuminate\Notifications\Notification;
 use GuzzleHttp\Client;
@@ -30,12 +30,12 @@ class LarkChannel
      */
     public function send($notifiable, Notification $notification)
     {   
-        if (! $url = $notifiable->routeNotificationFor('lark')) {
+        if (! Arr::get($LarkData, 'url')) {
             return;
         }
         $LarkData = $notification->toLark($notifiable)->toArray();
 
-        $response = $this->client->post($url, [
+        $response = $this->client->post(Arr::get($LarkData, 'url'), [
             'query' => Arr::get($LarkData, 'query'),
             'body' => json_encode(Arr::get($LarkData, 'data')),
             'verify' => Arr::get($LarkData, 'verify'),

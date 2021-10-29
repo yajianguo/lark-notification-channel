@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications;
+namespace NotificationChannels\Lark;
 
 class LarkMessage
 {
