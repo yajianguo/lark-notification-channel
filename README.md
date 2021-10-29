@@ -42,6 +42,7 @@ class ProjectCreated extends Notification
     public function toLark($notifiable)
     {
         return LarkMessage::create()
+            ->url('https://open.feishu.cn/open-apis/bot/v2/hook/selfPath')
             ->data([
                'payload' => [
                    'lark' => 'data'
@@ -55,7 +56,7 @@ class ProjectCreated extends Notification
 
 In order to let your Notification know which URL should receive the Lark data, add the `routeNotificationForLark` method to your Notifiable model.
 
-This method needs to return the URL where the notification Lark will receive a POST request.
+Url or Model POST request.
 
 ```php
 public function routeNotificationForLark()
