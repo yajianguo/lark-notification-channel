@@ -30,12 +30,11 @@ class LarkChannel
      */
     public function send($notifiable, Notification $notification)
     {   
+        $LarkData = $notification->toLark($notifiable)->toArray();
         $url = $notifiable->routeNotificationFor('lark')?? Arr::get($LarkData, 'url');
         if (! $url) {
             return;
         }
-
-        $LarkData = $notification->toLark($notifiable)->toArray();
 
         $response = $this->client->post($url, [
             'query' => Arr::get($LarkData, 'query'),
