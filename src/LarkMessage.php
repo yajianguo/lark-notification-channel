@@ -19,13 +19,6 @@ class LarkMessage
     protected $data;
 
     /**
-     * 其他信息（不会发送给第三方）
-     *
-     * @var mixed
-     */
-    protected $other;
-
-    /**
      * The headers to send with the request.
      *
      * @var array|null
@@ -70,17 +63,6 @@ class LarkMessage
     public function url($url = '')
     {
         $this->url = $url;
-
-        return $this;
-        
-    }
-
-    /**
-     * @param mixed $other
-     */
-    public function other($other = [])
-    {
-        $this->other = $other;
 
         return $this;
         
@@ -154,7 +136,6 @@ class LarkMessage
             'data' => $this->data,
             'headers' => $this->headers,
             'verify' => $this->verify,
-            'other' => $this->other,
         ];
     }
 }
