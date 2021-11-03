@@ -6,8 +6,7 @@
     "authors": [
         {
             "name": "yajianguo",
-            "email": "a@b.com",
-            "homepage": ""
+            "email": "a@b.com"
         }
     ],
     "require": {
